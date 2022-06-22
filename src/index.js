@@ -52,10 +52,12 @@ function filterDog(text){
 }
 function updateBreeds(dogs){
     const ul = document.querySelector('#dog-breeds')
-    let child = ul.lastElementChild;
-       while(child){
-            ul.removeChild(child);
-            child = ul.lastElementChild;
+    let updateChild = ul.lastElementChild;
+    //works with the text that we click on
+       while(updateChild){
+            ul.removeChild(updateChild);
+            updateChild = ul.lastElementChild;
+           
 
        }
     dogs.forEach(dog=>addBreed(dog))
@@ -67,6 +69,7 @@ function addBreed(breed){
     ul.appendChild(li);
     li.style.cursor = 'pointer'
     li.addEventListener('click', ()=>{
+        //add style color to the list of dog breeds
         li.style.color  = 'red'
     })
 }
